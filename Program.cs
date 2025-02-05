@@ -27,6 +27,10 @@ namespace UserSecretSample
 
             app.UseAuthorization();
 
+            app.MapGet("/sample", (IConfiguration configuration) =>
+            {
+                return configuration.GetSection("ConnectionString:LocalDb").Value;
+            });
 
             app.MapControllers();
 
