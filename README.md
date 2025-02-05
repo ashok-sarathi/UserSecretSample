@@ -8,7 +8,7 @@ dotnet user-secrets remove "ConnectionString:TestDb"
 ```
 
 ```cs
- var builder = WebApplication.CreateBuilder(args);
+var builder = WebApplication.CreateBuilder(args);
 app.MapGet("/sample", (IConfiguration configuration) =>
 {
     return configuration.GetSection("ConnectionString:LocalDb").Value;
